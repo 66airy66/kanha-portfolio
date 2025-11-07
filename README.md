@@ -1,4 +1,4 @@
-# Kanha Portfolio MVP Edition
+# Kanha Portfolio Reference Guide
 
 
 open `index.html` in your web browser
