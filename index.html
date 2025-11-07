@@ -21,7 +21,6 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#work" class="nav-link">Work</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -34,13 +33,20 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-image-container">
-            <img src="images/hero-photo.jpg" alt="Kanha" class="hero-image" id="heroImage">
-            <div class="hero-image-placeholder" id="heroPlaceholder">
-                <span>Your Photo Here</span>
+        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+            <div class="hero-name-panel">
+                <p class="hero-label">Portfolio of</p>
+                <h1 class="hero-name">KANHA</h1>
+                <div class="hero-arrow">
+                    <span class="arrow-icon">➜</span>
+                    <span class="arrow-text">That's me</span>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="images/kanha-hero.jpg" alt="Kanha in Paris" class="hero-image" id="heroImage">
             </div>
         </div>
-        <h1 class="hero-name">K A N H A</h1>
     </section>
 
     <!-- About Section -->
@@ -59,74 +65,43 @@
     <section id="work" class="work">
         <div class="container">
             <h2 class="section-title">My Work</h2>
-            <div class="work-grid">
-                <div class="work-item">
-                    <div class="work-image-placeholder">
-                        <span>Project Image</span> <!-- replace with screenshot of the website-->
+            <div class="work-collection">
+                <article class="work-item">
+                    <div class="work-image-slot">
+                        <span>Project Image</span>
                     </div>
                     <div class="work-info">
-                        <h3>Sumit's Portfolio</h3>
-                        <p>Made a website encompassing the projects of Sumit, his skills and his achievements.</p>
+                        <h3>Project Title 1</h3>
+                        <p>Describe your role, the challenge, and the impact you created. Mention the key tools or technologies.</p>
                     </div>
-                </div>
-                <div class="work-item">
-                    <div class="work-image-placeholder">
+                </article>
+                <article class="work-item reverse">
+                    <div class="work-image-slot">
                         <span>Project Image</span>
                     </div>
                     <div class="work-info">
                         <h3>Project Title 2</h3>
-                        <p>Description of your project goes here. Explain what you did and the technologies used.</p>
+                        <p>Share what made this project unique and what you learned. Highlight measurable outcomes if possible.</p>
                     </div>
-                </div>
-                <div class="work-item">
-                    <div class="work-image-placeholder">
+                </article>
+                <article class="work-item">
+                    <div class="work-image-slot">
                         <span>Project Image</span>
                     </div>
                     <div class="work-info">
                         <h3>Project Title 3</h3>
-                        <p>Description of your project goes here. Explain what you did and the technologies used.</p>
+                        <p>Talk through the problem statement, your solution, and the result. Mention collaborators if relevant.</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Photo Gallery</h2>
-            <p class="section-subtitle">A visual showcase of my work</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Photo 1</span>
+                </article>
+                <article class="work-item reverse">
+                    <div class="work-image-slot">
+                        <span>Project Image</span>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Photo 2</span>
+                    <div class="work-info">
+                        <h3>Project Title 4</h3>
+                        <p>Use this slot for another highlight. Keep it short, confident, and easy to scan.</p>
                     </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Photo 3</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Photo 4</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Photo 5</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-image-placeholder">
-                        <span>Photo 6</span>
-                    </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -146,12 +121,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Kanha. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
