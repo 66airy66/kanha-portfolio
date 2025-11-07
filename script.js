@@ -3,8 +3,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
+        const navbar = document.querySelector('.navbar');
+        
         if (target) {
-            const offsetTop = target.offsetTop - 80;
+            const offsetTop = target.offsetTop;
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
@@ -15,6 +17,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const hamburger = document.querySelector('.hamburger');
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
+            
+            // Hide navbar if scrolling to home section
+            setTimeout(() => {
+                if (this.getAttribute('href') === '#home' || window.scrollY < window.innerHeight * 0.3) {
+                    navbar.classList.remove('visible');
+                }
+            }, 100);
         }
     });
 });
@@ -36,14 +45,26 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Navbar background on scroll
+// Navbar visibility on scroll
+let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Show navbar when scrolling down past the hero section
+    if (scrollTop > window.innerHeight * 0.3) {
+        navbar.classList.add('visible');
+        if (scrollTop > 50) {
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        }
     } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        // Hide navbar when at the top
+        navbar.classList.remove('visible');
     }
+    
+    lastScrollTop = scrollTop;
 });
 
 // Intersection Observer for fade-in animations
@@ -76,4 +97,32 @@ document.querySelectorAll('.gallery-item').forEach(item => {
         console.log('Gallery item clicked - ready for lightbox implementation');
     });
 });
+
+// Handle hero image loading
+const heroImage = document.getElementById('heroImage');
+const heroPlaceholder = document.getElementById('heroPlaceholder');
+
+if (heroImage) {
+    heroImage.addEventListener('load', function() {
+        this.style.display = 'block';
+        if (heroPlaceholder) {
+            heroPlaceholder.style.display = 'none';
+        }
+    });
+    
+    heroImage.addEventListener('error', function() {
+        this.style.display = 'none';
+        if (heroPlaceholder) {
+            heroPlaceholder.style.display = 'flex';
+        }
+    });
+    
+    // Check if image is already loaded
+    if (heroImage.complete && heroImage.naturalHeight !== 0) {
+        heroImage.style.display = 'block';
+        if (heroPlaceholder) {
+            heroPlaceholder.style.display = 'none';
+        }
+    }
+}
 
