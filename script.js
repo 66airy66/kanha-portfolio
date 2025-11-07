@@ -103,35 +103,14 @@ const heroImage = document.getElementById('heroImage');
 const heroPlaceholder = document.getElementById('heroPlaceholder');
 const hero = document.querySelector('.hero');
 const heroImageWrapper = document.querySelector('.hero-image-wrapper');
-const heroOverlay = document.querySelector('.hero-overlay');
-const heroNamePanel = document.querySelector('.hero-name-panel');
 
-// Gray text when hovering the image area only
-if (hero && heroImageWrapper && heroOverlay && heroNamePanel) {
-    const applyDarkCenterOverText = () => {
-        const heroRect = hero.getBoundingClientRect();
-        const textRect = heroNamePanel.getBoundingClientRect();
-        const centerX = (textRect.left + textRect.width / 2) - heroRect.left;
-        const centerY = (textRect.top + textRect.height / 2) - heroRect.top;
-        const xPct = (centerX / heroRect.width) * 100;
-        const yPct = (centerY / heroRect.height) * 100;
-        const radiusPx = Math.max(textRect.width, textRect.height) * 0.9;
-        // Force a dark-center gradient directly on the overlay
-        heroOverlay.style.opacity = '1';
-        heroOverlay.style.background = `radial-gradient(circle at ${xPct}% ${yPct}%, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.6) ${Math.round(radiusPx)}px, rgba(0,0,0,0) ${Math.round(radiusPx)+160}px, rgba(0,0,0,0) 100%)`;
-    };
-
+// Darken the area around the hero text when hovering the photo
+if (hero && heroImageWrapper) {
     heroImageWrapper.addEventListener('mouseenter', () => {
-        applyDarkCenterOverText();
         hero.classList.add('image-hover');
-    });
-    heroImageWrapper.addEventListener('mousemove', () => {
-        applyDarkCenterOverText();
     });
     heroImageWrapper.addEventListener('mouseleave', () => {
         hero.classList.remove('image-hover');
-        heroOverlay.style.opacity = '';
-        heroOverlay.style.background = '';
     });
 }
 

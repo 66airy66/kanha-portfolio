@@ -193,6 +193,19 @@ body {
     z-index: 4;
 }
 
+.hero-name-panel::before {
+    content: '';
+    position: absolute;
+    inset: -1.2rem;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    filter: blur(16px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
 .hero-label {
     font-size: 0.85rem;
     letter-spacing: 6px;
@@ -202,18 +215,13 @@ body {
     transition: color 0.25s ease;
 }
 
-/* When hovering the image, darken around the text area */
+/* When hovering the image, show overlay and keep transparent center around text */
 .hero.image-hover .hero-overlay {
-    /* Ensure overlay is visible even if parent isn't hovered */
     opacity: 1;
-    /* Dark center over text → fade to transparent */
-    background: radial-gradient(
-        circle at var(--spot-x) var(--spot-y),
-        rgba(0, 0, 0, 0.55) 0%,
-        rgba(0, 0, 0, 0.6) var(--spot-radius),
-        rgba(0, 0, 0, 0) calc(var(--spot-radius) + 10rem),
-        rgba(0, 0, 0, 0) 100%
-    );
+}
+
+.hero.image-hover .hero-name-panel::before {
+    opacity: 1;
 }
 
 .hero-name {
