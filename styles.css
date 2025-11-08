@@ -740,8 +740,57 @@ section {
         gap: 0.5rem;
     }
 
+    .section-title {
+        font-size: 1.75rem;
+        letter-spacing: 1.5px;
+    }
+
     .work-image-slot {
-        min-height: 200px;
+        min-height: 180px;
+        box-shadow: 3px 6px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .work-image-slot.contain-image img {
+        max-height: 320px;
+    }
+
+    .work-info {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .work-info h3 {
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+    }
+
+    .work-info p {
+        font-size: 0.95rem;
+    }
+
+    .experience-tools {
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    .experience-tool-icon {
+        width: 44px;
+        height: 44px;
+        padding: 4px;
+    }
+
+    .contact-link {
+        width: 100%;
+    }
+
+    .contact-icon-link {
+        width: 56px;
+        height: 56px;
+    }
+
+    .contact-icon-link img {
+        width: 30px;
+        height: 30px;
     }
 
     section {
