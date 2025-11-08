@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'>
+  <defs>
+    <linearGradient id='g2' x1='0%' y1='0%' x2='100%' y2='0%'>
+      <stop offset='0%' stop-color='#065f46'/>
+      <stop offset='100%' stop-color='#10b981'/>
+    </linearGradient>
+  </defs>
+  <rect width='600' height='400' rx='32' fill='url(#g2)'/>
+  <text x='50%' y='45%' text-anchor='middle' font-size='64' font-family='Poppins, Arial, sans-serif' fill='#ecfdf5'>Greenpower</text>
+  <text x='50%' y='65%' text-anchor='middle' font-size='40' font-family='Poppins, Arial, sans-serif' fill='#d1fae5'>F24 Mentor</text>
+</svg>

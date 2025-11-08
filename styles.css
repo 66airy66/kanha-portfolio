@@ -485,6 +485,31 @@ section {
     left: 0;
 }
 
+.contact-icon-link {
+    width: 68px;
+    height: 68px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-icon-link img {
+    width: 36px;
+    height: 36px;
+    display: block;
+}
+
+.contact-icon-link:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
 /* Footer */
 .footer {
     background-color: var(--secondary-color);
