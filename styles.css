@@ -437,12 +437,13 @@ section {
 }
 
 .work-image-slot.scale-down {
-    overflow: visible;
+    justify-content: center;
 }
 
 .work-image-slot.scale-down img {
-    transform: scale(0.7);
-    transform-origin: center;
+    width: 100%;
+    height: auto;
+    max-height: none;
 }
 
 .work-info {
