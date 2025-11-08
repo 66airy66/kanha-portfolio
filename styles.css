@@ -409,21 +409,40 @@ section {
     height: 100%;
 }
 
-.work-image-slot.contain-image img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    background-color: transparent;
-    padding: 0;
-}
-
 .work-image-slot.contain-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: auto;
-    align-items: flex-start;
+    height: auto;
+    align-self: flex-start;
+    padding: 0;
+    overflow: visible;
 }
 
 .work-image-slot.contain-image .work-image-link {
+    display: block;
+    width: 100%;
     height: auto;
+}
+
+.work-image-slot.contain-image img {
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    object-fit: contain;
+    object-position: center;
+    background-color: transparent;
+    display: block;
+}
+
+.work-image-slot.scale-down {
+    overflow: visible;
+}
+
+.work-image-slot.scale-down img {
+    transform: scale(0.7);
+    transform-origin: center;
 }
 
 .work-info {
