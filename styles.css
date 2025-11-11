@@ -326,6 +326,11 @@ section {
     font-size: 1.1rem;
 }
 
+.photos-note {
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
 /* About Section */
 .about {
     background-color: var(--bg-light);
